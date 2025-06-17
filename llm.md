@@ -11,10 +11,13 @@
   - `cd backend && npm install`
 
 ## 3. Variáveis de Ambiente
-- Crie um arquivo `.env` na pasta `backend/` com:
-  ```
+- Crie um arquivo `.env` na pasta `backend/` com base em [`backend/example.env`](backend/example.env):
+  ```env
+  # String de conexão do PostgreSQL
   DATABASE_URL=postgresql://usuario:senha@host:porta/nome_do_banco
-  JWT_SECRET=sua_chave_secreta
+
+  # Chave secreta para assinar JWTs
+  JWT_SECRET=sua_chave_secreta_super_segura
   ```
 - **Importante:** O backend só funciona se essas variáveis estiverem corretas.
 

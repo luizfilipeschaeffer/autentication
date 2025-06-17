@@ -13,6 +13,7 @@ Este projeto é um boilerplate completo de autenticação com Next.js (frontend)
 - [Funcionalidades](#funcionalidades)
 - [Como Rodar](#como-rodar)
 - [Deploy](#deploy)
+- [Exemplo de .env](#exemplo-de-env)
 
 ---
 
@@ -32,6 +33,7 @@ O projeto implementa um sistema de autenticação completo, com cadastro, login,
 │   ├── setup-db.js     # Script para criar/resetar o banco
 │   ├── sql/
 │   │   └── init.sql    # Schema e seed do banco
+│   ├── example.env     # Exemplo de configuração do .env
 │   └── package.json    # Dependências backend
 ├── src/
 │   └── app/
@@ -53,10 +55,11 @@ O projeto implementa um sistema de autenticação completo, com cadastro, login,
    - No backend: `cd backend && npm install`
 3. **Configure o banco:**
    - Crie um banco PostgreSQL (local, Neon, Render, etc)
-   - Copie a string de conexão para o arquivo `.env` na pasta `backend/`:
+   - Copie a string de conexão para o arquivo `.env` na pasta `backend/`.
+   - Use o arquivo `backend/example.env` como modelo:
      ```
-     DATABASE_URL=postgresql://usuario:senha@host:porta/nome_do_banco
-     JWT_SECRET=sua_chave_secreta
+     cp backend/example.env backend/.env
+     # Edite os valores conforme seu ambiente
      ```
 4. **Rode o script de setup:**
    - `cd backend && node setup-db.js`
@@ -113,6 +116,16 @@ O projeto implementa um sistema de autenticação completo, com cadastro, login,
 - O frontend pode ser deployado na Vercel, Netlify, etc.
 - O backend pode ser deployado no Render, Railway, etc.
 - Configure as variáveis de ambiente de acordo com o ambiente de produção.
+
+## Exemplo de .env
+Veja o arquivo [`backend/example.env`](backend/example.env):
+```env
+# String de conexão do PostgreSQL
+DATABASE_URL=postgresql://usuario:senha@host:porta/nome_do_banco
+
+# Chave secreta para assinar JWTs
+JWT_SECRET=sua_chave_secreta_super_segura
+```
 
 ---
 
